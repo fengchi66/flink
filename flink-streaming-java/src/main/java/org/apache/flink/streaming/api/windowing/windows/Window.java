@@ -26,6 +26,7 @@ import org.apache.flink.annotation.PublicEvolving;
  *
  * <p>Subclasses should implement {@code equals()} and {@code hashCode()} so that logically same
  * windows are treated the same.
+ * Window类包含两个子类：GlobalWindow和TimeWindow。GlobalWindow是全局窗口，TimeWindow是具有起止时间的时间段窗口。
  */
 @PublicEvolving
 public abstract class Window {

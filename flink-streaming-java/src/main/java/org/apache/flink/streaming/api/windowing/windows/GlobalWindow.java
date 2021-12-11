@@ -29,15 +29,15 @@ import org.apache.flink.core.memory.DataOutputView;
 import java.io.IOException;
 
 /**
- * The default window into which all data is placed (via {@link
- * org.apache.flink.streaming.api.windowing.assigners.GlobalWindows}).
+ * The default window into which all data is placed (via {@link org.apache.flink.streaming.api.windowing.assigners.GlobalWindows}).
  */
 @PublicEvolving
 public class GlobalWindow extends Window {
 
     private static final GlobalWindow INSTANCE = new GlobalWindow();
 
-    private GlobalWindow() {}
+    private GlobalWindow() {
+    }
 
     public static GlobalWindow get() {
         return INSTANCE;
@@ -65,6 +65,7 @@ public class GlobalWindow extends Window {
 
     /** A {@link TypeSerializer} for {@link GlobalWindow}. */
     public static class Serializer extends TypeSerializerSingleton<GlobalWindow> {
+
         private static final long serialVersionUID = 1L;
 
         @Override

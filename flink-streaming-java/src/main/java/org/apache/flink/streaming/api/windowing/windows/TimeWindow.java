@@ -113,11 +113,13 @@ public class TimeWindow extends Window {
      * Returns {@code true} if this window intersects the given window or if this window is just
      * after or before the given window.
      */
+    // 判断两个窗口是否有交集
     public boolean intersects(TimeWindow other) {
         return this.start <= other.end && this.end >= other.start;
     }
 
     /** Returns the minimal window covers both this window and the given window. */
+    // 返回两个窗口的并集
     public TimeWindow cover(TimeWindow other) {
         return new TimeWindow(Math.min(start, other.start), Math.max(end, other.end));
     }
